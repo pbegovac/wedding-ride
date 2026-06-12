@@ -41,7 +41,6 @@ export default function Modal({ data, onNext }) {
     <Overlay>
       <Card>
         <Image src={data.image} />
-        <h3>{data.story}</h3>
         <Button onClick={onNext}>Next stop 🚴</Button>
       </Card>
     </Overlay>

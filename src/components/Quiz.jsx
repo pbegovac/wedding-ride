@@ -3,10 +3,14 @@ import styled from "styled-components";
 import { questions } from "../data/questions";
 import Modal from "./Modal";
 import { isCorrectAnswer, wrongMessages } from "../utils/quizHelpers";
+import tarikBg from "../assets/tarik.webp";
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  background: #0d0d0d;
+  background-image: url(${tarikBg});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   display: flex;
   flex-direction: column;
@@ -54,14 +58,20 @@ const Input = styled.input`
 const Button = styled.button`
   margin-top: 10px;
   padding: 12px;
-  background: #00ff88;
+  background: #31b235;
   border: none;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
 `;
 
-export default function Quiz({ swiper, goToIntro }) {
+const QuestionTitle = styled.h2`
+  color: #fff;
+  background-color: black;
+  padding: 0.5rem;
+`;
+
+export default function Quiz({ goToIntro }) {
   const [index, setIndex] = useState(0);
   const [input, setInput] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
@@ -80,6 +90,8 @@ export default function Quiz({ swiper, goToIntro }) {
   };
 
   const checkAnswer = () => {
+    if (!input.trim()) return;
+
     const answers = Array.isArray(current.answer)
       ? current.answer
       : [current.answer];
@@ -150,7 +162,7 @@ export default function Quiz({ swiper, goToIntro }) {
         )}
       </NavigationRow>
 
-      <h2>{current.question}</h2>
+      <QuestionTitle>{current.question}</QuestionTitle>
 
       <Input
         className="swiper-no-swiping"

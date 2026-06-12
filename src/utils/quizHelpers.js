@@ -10,12 +10,14 @@ export const normalize = (value) =>
 export const isCorrectAnswer = (input, answers) => {
   const normalizedInput = normalize(input);
 
-  return answers.some(
-    (answer) =>
-      normalize(answer) === normalizedInput ||
-      normalizedInput.includes(normalize(answer)) ||
-      normalize(answer).includes(normalizedInput),
-  );
-};
+  return answers.some((answer) => {
+    const normalizedAnswer = normalize(answer);
 
+    return (
+      normalizedInput === normalizedAnswer ||
+      normalizedInput.includes(normalizedAnswer) ||
+      normalizedAnswer.includes(normalizedInput)
+    );
+  });
+};
 export const wrongMessages = ["Izgleda da ne voliš Petru"];
