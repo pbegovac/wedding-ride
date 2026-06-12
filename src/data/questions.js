@@ -66,7 +66,7 @@ export const questions = [
     id: 10,
     question:
       "Ovdje si zbrajao i oduzimao. I brojeve i latice. Voli me, ne voli me, voli me, ne voli me. Sva sreća brojevi su ti išli, a u ovom drugom ti se posrećilo. Gdje si to Petru vodio za rukicu do matematike i zašto ste baš svaki mali odmor morali provest skupa? Jazavci",
-    image: "/wedding-ride/images/mioc.jpg",
+    image: "/wedding-ride/images/mioc.jpeg",
     answer: "Mioc",
   },
   {
